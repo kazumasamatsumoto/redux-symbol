@@ -141,3 +141,34 @@ const privateKey = '72D29CA347E87A7C4205D90BE51A800931D87402DF34A1FB5BD533BBC623
 ```
 
 とありますが、これは僕が持っているテストネットのアカウントです。
+
+## SendMultisigTransaction.tsx
+
+こちらアカウントの秘密鍵とかガッツリ書いていますが、
+これは3StepWalletでの実証実験用のアカウントです。
+
+皆さんが実施するにあたって必要なのは
+
+``` SendMultisigTransaction.tsx
+const cosignatoryPrivateKey = "2F8F16D66BD2CC8774B509A1D1A57718CD6F205C04918C5A9FB91A8A2B673088"
+const multisigAccountPublicKey = "A8241EDA0FF5BABB607B19D5BDB9FA383166E7AEB61E7D4DDA11F3E4370E7325"
+const recipientRawAddress = "TBUKFL-3BMEXY-BDQYBV-5Y7UOW-NRM3TD-RZ4PNF-CZQ"
+```
+
+この部分についてです。
+まずはアカウントをマルチシグにするために
+マルチシグ用のアカウント１つ
+承認用のアカウント２つ
+送付先用のアカウント１つをご準備ください
+
+ここでは2of2の承認でトランザクションが承認される形になります。
+
+であとはトランザクション承認用の一つのアカウントの秘密鍵を
+cosignatoryPrivateKeyへ
+マルチシグの公開鍵を
+multisigAccountPublicKeyへ
+送付先用のアドレスを
+recipientRawAddressへ
+
+設定するとマルチシグトランザクションはできます。
+なのであとはPCのウォレットを使って承認作業を実施すればOKです。
