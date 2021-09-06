@@ -76,6 +76,7 @@ import copy from 'clipboard-copy'
 
 <!-- ここの部分ですがES7 React/Redux/GraphQL/React-Native snippetsを（vscodeのみ）を入れているとファイルを作成してrafcと入力してエンターを押すといい感じにしてくれます -->
 export const AccountCreate: React.FC = () => {
+  <!-- 今回管理する状態はプライベートキーとコピーしたかどうかのステート -->
   const [accountPrivateKey, setAccountPrivateKey] = useState('')
   const [copyState, setCopyState] = useState(false)
 
@@ -124,3 +125,19 @@ export const AccountCreate: React.FC = () => {
 
 ```
 
+## SendTransaction.tsxについて
+
+現在このファイルはトランザクションの送信を実施しています。
+このような非同期処理は本来Redux-ToolkitのcreateAsyncThunkを使用して
+成功した時、失敗した時、実施中というステータスで変化を加えることができます。
+それについてはRedux-Toolkitの回で説明しようと思います。
+
+なのでこれも同様に「レガシー」というやつです。
+ソースコードには
+
+``` SendTransaction.tsx
+const rawAddress = 'TBUKFL3BMEXYBDQYBV5Y7UOWNRM3TDRZ4PNFCZQ'
+const privateKey = '72D29CA347E87A7C4205D90BE51A800931D87402DF34A1FB5BD533BBC623E1A9'
+```
+
+とありますが、これは僕が持っているテストネットのアカウントです。

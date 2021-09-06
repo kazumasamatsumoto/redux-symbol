@@ -26,7 +26,7 @@ export const SendTransaction: React.FC = () => {
 
     /* start block 01 */
     // replace with recipient address
-    // ここのアドレスは好きなアドレスに変換してね
+    // TODO: ここのアドレスは好きなアドレスに変換してね
     const rawAddress = 'TBUKFL3BMEXYBDQYBV5Y7UOWNRM3TDRZ4PNFCZQ'
     const recipientAddress = Address.createFromRawAddress(rawAddress)
 
@@ -42,7 +42,7 @@ export const SendTransaction: React.FC = () => {
 
     /* start block 02 */
     // replace with sender private key
-    // ここはプライベートキーです。あくまでもテスト用なので本番では.envで隠すなり工夫が必要です
+    // TODO: ここはプライベートキーです。あくまでもテスト用なので本番では.envで隠すなり工夫が必要です
     const privateKey =
       '72D29CA347E87A7C4205D90BE51A800931D87402DF34A1FB5BD533BBC623E1A9'
     const account = Account.createFromPrivateKey(privateKey, networkType)
