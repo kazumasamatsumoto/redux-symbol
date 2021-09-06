@@ -59,13 +59,8 @@ export const ConfirmMultisigTransaction = () => {
     const privateKey =
       '72D29CA347E87A7C4205D90BE51A800931D87402DF34A1FB5BD533BBC623E1A9'
     const account = Account.createFromPrivateKey(privateKey, networkType)
-    // replace with node endpoint
-    // replace with transaction hash to cosign
     const transactionHash = hash
-    /* end block 02 */
-
-    /* start block 03 */
-    const nodeUrl = process.env.VUE_APP_WEB_SOCKET_URL
+    const nodeUrl = "https://sym-test.opening-line.jp:3001"
     if (nodeUrl) {
       const repositoryFactory = new RepositoryFactoryHttp(nodeUrl, {
         websocketUrl: 'ws://ngl-dual-601.testnet.symboldev.network:3000/ws',
