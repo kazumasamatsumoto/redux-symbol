@@ -1,44 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# ひとまずインストール関係ですが
 
-## Available Scripts
+reactのプロジェクトを作成します。
 
-In the project directory, you can run:
+色々プロジェクトの作成方法は人によって異なるので、僕はこんな感じでやってますよ！
 
-### `yarn start`
+という感じを説明します。
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+まず、僕はからのディレクトリを作成します
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+``` terminal
+mkdir sample
+```
 
-### `yarn test`
+でそのからのフォルダに移動してから
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+``` terminal
+npx create-react-app --template redux-typescript .
+```
 
-### `yarn build`
+と入力します。
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+このコマンドでreduxとtypescriptを仕様したreactのアプリケーションが使用できます
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+そしてsymbol-sdkをinstallしていきます。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+``` terminal
+npm install symbol-sdk rxjs
+```
 
-### `yarn eject`
+ローカル環境での起動は
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+``` terminal
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``` terminal
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+どちらでも起動します。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+重要なのはスタートコマンドでローカル環境が起動して色々表示されるということです。
 
-## Learn More
+これからちょっとずつreactの機能を使いながらsymbok-sdkを使用したアプリケーションを作っていこうと思います
+（結構忙しかったりするので、進捗はかめですが、よろしくお願いします。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+一応目標としてはredux-toolkitを使用した状態管理とsymbolの非同期処理管理やreact-queryを使用したキャッシュデータ保存など
+基本的にはtypescriptを使用できればトラブルなくできるはずなので、
+その辺りを目標にしていきたいと思います。
