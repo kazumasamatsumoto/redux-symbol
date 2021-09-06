@@ -16,25 +16,25 @@ export const Layout: VFC<Props> = ({ children }) => {
                 className="text-sm text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 to="/"
               >
-                react-query
+                Account Create
               </Link>
               <Link
                 className="text-sm text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-                to="/fetch-a"
+                to="/send-transaction"
               >
-                Regular fetch
+                Send Transaction
               </Link>
               <Link
                 className="text-sm text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-                to="/main-context"
+                to="/send-multisig-transaction"
               >
-                useContext
+                Send MultisigTransaction
               </Link>
               <Link
                 className="text-sm text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-                to="/main-rtkit"
+                to="/confirm-multisig-transaction"
               >
-                RTKit
+                Confirm MultisigTransaction
               </Link>
             </div>
           </div>
