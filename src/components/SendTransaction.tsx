@@ -9,7 +9,7 @@ import {
   UInt64,
 } from 'symbol-sdk'
 
-export const SendTransaction = () => {
+export const SendTransaction: React.FC = () => {
   const example = async (): Promise<void> => {
     // Network information
     const nodeUrl = 'http://ngl-dual-101.testnet.symboldev.network:3000'
@@ -26,6 +26,7 @@ export const SendTransaction = () => {
 
     /* start block 01 */
     // replace with recipient address
+    // ここのアドレスは好きなアドレスに変換してね
     const rawAddress = 'TBUKFL3BMEXYBDQYBV5Y7UOWNRM3TDRZ4PNFCZQ'
     const recipientAddress = Address.createFromRawAddress(rawAddress)
 
@@ -41,6 +42,7 @@ export const SendTransaction = () => {
 
     /* start block 02 */
     // replace with sender private key
+    // ここはプライベートキーです。あくまでもテスト用なので本番では.envで隠すなり工夫が必要です
     const privateKey =
       '72D29CA347E87A7C4205D90BE51A800931D87402DF34A1FB5BD533BBC623E1A9'
     const account = Account.createFromPrivateKey(privateKey, networkType)
@@ -62,6 +64,7 @@ export const SendTransaction = () => {
     /* end block 03 */
   }
   return (
+    // reactではカーリーブラケット{}で囲うことでPromiseのような関数がうまくいった時then()のような処理もかけます
     <button
       className="text-white bg-indigo-600 hover:bg-indigo-700 rounded py-2 px-3 text-sm"
       onClick={() => example().then()}
