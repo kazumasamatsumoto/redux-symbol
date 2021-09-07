@@ -12,6 +12,8 @@ import {
 export const SendTransaction: React.FC = () => {
   const example = async (): Promise<void> => {
     // Network information
+    // いつもの設定
+    // ここではノードURLはwebsocketを使う必要がないのでhttpにしてます
     const nodeUrl = 'http://ngl-dual-101.testnet.symboldev.network:3000'
     const repositoryFactory = new RepositoryFactoryHttp(nodeUrl)
     const epochAdjustment = await repositoryFactory
@@ -30,6 +32,7 @@ export const SendTransaction: React.FC = () => {
     const rawAddress = 'TBUKFL3BMEXYBDQYBV5Y7UOWNRM3TDRZ4PNFCZQ'
     const recipientAddress = Address.createFromRawAddress(rawAddress)
 
+    // トランザクションの作成
     const transferTransaction = TransferTransaction.create(
       Deadline.create(epochAdjustment),
       recipientAddress,
@@ -43,6 +46,7 @@ export const SendTransaction: React.FC = () => {
     /* start block 02 */
     // replace with sender private key
     // TODO: ここはプライベートキーです。あくまでもテスト用なので本番では.envで隠すなり工夫が必要です
+    // 署名です。
     const privateKey =
       '72D29CA347E87A7C4205D90BE51A800931D87402DF34A1FB5BD533BBC623E1A9'
     const account = Account.createFromPrivateKey(privateKey, networkType)
@@ -55,6 +59,7 @@ export const SendTransaction: React.FC = () => {
     /* end block 02 */
 
     /* start block 03 */
+    // トランザクションが送信されたか監視します。
     const transactionRepository =
       repositoryFactory.createTransactionRepository()
     const response = await transactionRepository
